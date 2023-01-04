@@ -1,0 +1,7 @@
+e commerece front end
+
+   1.create an angular project -ng new cart 
+   2.Run angular -ng s -o
+   3.add bootstrap,font awesome ,google font 
+   4. lazy loading
+         -its a process of loading components 
