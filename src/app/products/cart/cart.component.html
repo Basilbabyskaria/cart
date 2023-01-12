@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="cartitem.length==0">
     <div class="row text-center">
         <div class="col">
             <img src="https://www.bing.com/th/id/OGC.4ce980956eb6ef1e0d158792b0f395f3?pid=1.7&rurl=https%3a%2f%2fmedia2.giphy.com%2fmedia%2fcgfITbcKEVbsgViwKq%2fgiphy.gif&ehk=qoIOmZ5UhjED2kMzPSIGb78V8TuRydSIP3E%2fnrH2JpM%3d" alt="">
@@ -21,12 +21,12 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let product of cartitem">
                     <td>100</td>
-                    <td>Men"s T Shirt</td>
-                    <td><img src="https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1665832607_7807006.jpg?w=360&dpr=1.0" alt=""></td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ex dolorum sapiente reprehenderit saepe illo delectus fuga vero obcaecati beatae eius ea, laboriosam eaque modi et cupiditate. Dolor, doloremque eligendi!</td>
-                    <td>500</td>
+                    <td>{{product.title}}</td>
+                    <td><img [src]="product.image" alt=""></td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.price}}</td>
                     <td><i class="fa fa-trash text-danger"></i></td>
                 </tbody>
                 

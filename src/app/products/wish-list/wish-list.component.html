@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="emsg">
     <div class="row text-center">
         <div class="col">
             <img src="https://www.bing.com/th/id/OGC.679abe925c3a4c07071ddbd2007e250a?pid=1.7&rurl=https%3a%2f%2fmedia.giphy.com%2fmedia%2fCqaFVWiIAihxe%2fgiphy.gif&ehk=WKlY2Ea0ebAxFrqjf5aFRebMmByet7S89kzPkcVJj7Y%3d" alt="">
@@ -8,25 +8,25 @@
     </div>
 </div>
 <section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
+    <div class="container px-4 px-lg-5 mt-5" >
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5">
+            <div class="col mb-5" *ngFor="let product of wishlist">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                    <img class="card-img-top" [src]="product.image" alt="..." />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">Fancy Product</h5>
+                            <h5 class="fw-bolder">{{product.title}}</h5>
                             <!-- Product price-->
-                            $40.00 - $80.00
+                            ${{product.price}}
                         </div>
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
-                            <a class="btn btn-outline-dark mt-auto" href="#"><i class="fa fa-trash"></i></a>&nbsp;
+                            <button class="btn btn-outline-dark mt-auto" (click)="deletewish(product)"><i class="fa fa-trash"></i></button>&nbsp;
                             <a class="btn btn-outline-dark mt-auto" routerLink="product/cart"><i class="fa fa-cart-plus"></i></a>
                         </div>
 

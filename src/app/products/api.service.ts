@@ -25,4 +25,13 @@ export class ApiService {
     return this.http.post('http://localhost:3000/addtowishlist',body)
 
   }
+  getwishlist(){
+    return this.http.get('http://localhost:3000/getwishlist')
+
+  }
+  deletefromwish(id:any){
+    return this.http.delete('http://localhost:3000/deletewish/'+id)
+
+
+  }
 }

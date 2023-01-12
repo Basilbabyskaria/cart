@@ -1,1 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Comfortaa&family=Cutive+Mono&family=East+Sea+Dokdo&family=Nova+Round&display=swap');
+.navbar{
+    position:sticky;
+    /* width: 100%; */
+    top: 0;
+    z-index: 1;
+}
